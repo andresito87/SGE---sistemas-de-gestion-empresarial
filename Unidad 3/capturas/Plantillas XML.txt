@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<t t-name="maquinaria.informe">
+    <div class="page">
+        <p>Información sobre la maquinaria:</p>
+        <t t-set="maquinaria" t-value="docs"/>
+        <div>
+            <strong>Modelo:</strong>
+            <span t-field="maquinaria.x_name"/>
+        </div>
+        <div>
+            <strong>Matrícula:</strong>
+            <span t-field="maquinaria.x_matricula"/>
+        </div>
+    </div>
+</t>
+
+PDF
+<?xml version="1.0"?>
+ <t t-name="maquinaria.report_informe">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h1>Informe de Maquinaria</h1>
+                        <t t-set="maquinaria" t-value="docs"/>
+                        <table>
+                            <tr>
+                                <td><b>Nombre:</b></td>
+                                <td><span t-field="maquinaria.x_name"/></td>
+                            </tr>
+                            <tr>
+                                <td><b>Matrícula:</b></td>
+                                <td><span t-field="maquinaria.x_matricula"/></td>
+                            </tr>
+                        </table>
+                    </main>
+                </div>
+            </t>
+        </t>
+
+<t t-name="maquinaria.informe">
+    <t t-call="web.basic_layout">
+        <div class="page">
+            <main>
+                <h1>Informe de Maquinaria</h1>
+                <t t-set="maquinaria" t-value="docs"/>
+                <table style="width: 25%; table-layout: fixed;">
+                    <tr>
+                        <td style="width: 50%;"><b>Nombre:</b></td>
+                        <td style="width: 50%;"><span t-field="maquinaria.x_name"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;"><b>Matrícula:</b></td>
+                        <td style="width: 50%;"><span t-field="maquinaria.x_matricula"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;"><b>Año de Compra:</b></td>
+                        <td style="width: 50%;"><span t-field="maquinaria.x_anio_compra"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;"><b>Precio:</b></td>
+                        <td style="width: 50%;"><span t-field="maquinaria.x_precio"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;"><b>Proveedor:</b></td>
+                        <td style="width: 50%;"><span t-field="maquinaria.x_proveedor"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 50%;"><b>Reparada:</b></td>
+                        <td style="width: 50%;">
+                            <span t-if="maquinaria.x_reparada">Sí</span>
+                            <span t-else="True">No</span>
+                        </td>
+                    </tr>
+                </table>
+            </main>
+        </div>
+    </t>
+</t>
