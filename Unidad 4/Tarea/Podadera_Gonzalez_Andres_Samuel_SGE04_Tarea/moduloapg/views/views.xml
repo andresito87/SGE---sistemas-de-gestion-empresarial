@@ -1,0 +1,127 @@
+<odoo>
+  <data>
+    <!-- VISTAS ÁRBOL -->
+    <record model="ir.ui.view" id="moduloapg.biblioteca_list_view">
+      <field name="name">moduloapg.biblioteca.view.tree</field>
+      <field name="model">moduloapg.biblioteca</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="capacidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="moduloapg.libro_list_view">
+      <field name="name">moduloapg.libro.view.tree</field>
+      <field name="model">moduloapg.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="publicado"/>
+          <field name="precio"/>
+          <field name="genero"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="moduloapg.autor_list_view">
+      <field name="name">moduloapg.autor.view.tree</field>
+      <field name="model">moduloapg.autor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nacionalidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- VISTAS FORMULARIO -->
+    <record model="ir.ui.view" id="moduloapg.biblioteca_form_view">
+    <field name="name">moduloapg.biblioteca.view.form</field>
+    <field name="model">moduloapg.biblioteca</field>
+    <field name="arch" type="xml">
+        <form string="Formulario de Biblioteca">
+            <sheet>
+                <separator string="Información de la biblioteca"/>
+                <group>
+                    <field name="name"/>
+                    <field name="capacidad"/>
+                </group>
+                <group>
+                    <field name="libros_ids"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="moduloapg.libro_form_view">
+        <field name="name">moduloapg.libro.view.form</field>
+        <field name="model">moduloapg.libro</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Libro">
+                <sheet>
+                    <separator string="Información de la biblioteca"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="publicado"/>
+                        <field name="precio"/>
+                        <field name="genero"/>
+                        <field name="biblioteca_id"/>
+                    </group>
+                    <group>
+                        <field name="autor_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="moduloapg.autor_form_view">
+    <field name="name">moduloapg.autor.view.form</field>
+    <field name="model">moduloapg.autor</field>
+    <field name="arch" type="xml">
+        <form string="Autor">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="nacionalidad"/>
+                </group>
+                <group>
+                    <field name="libro_ids"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- ACCIONES DE VENTANA -->
+    <record model="ir.actions.act_window" id="moduloapg.biblioteca_action_window">
+      <field name="name">Biblioteca</field>
+      <field name="res_model">moduloapg.biblioteca</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="moduloapg.libro_action_window">
+      <field name="name">Libros</field>
+      <field name="res_model">moduloapg.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="moduloapg.autor_action_window">
+      <field name="name">Autores</field>
+      <field name="res_model">moduloapg.autor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENU ITEMS -->
+    <menuitem name="moduloapg" id="moduloapg.menu_root"/>
+  
+    <!-- SUBMENU ITEMS -->
+    <menuitem name="Biblioteca" id="moduloapg.biblioteca_menu" parent="moduloapg.menu_root" action="moduloapg.biblioteca_action_window"/>
+    <menuitem name="Libros" id="moduloapg.libros_menu" parent="moduloapg.menu_root" action="moduloapg.libro_action_window"/>
+    <menuitem name="Autores" id="moduloapg.autores_menu" parent="moduloapg.menu_root" action="moduloapg.autor_action_window"/>
+ 
+  </data>
+</odoo>

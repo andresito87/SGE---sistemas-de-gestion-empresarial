@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Datos de Bibliotecas -->
+    <record id="biblioteca_1" model="moduloapg.biblioteca">
+        <field name="name">Biblioteca Central</field>
+        <field name="capacidad">5000</field>
+    </record>
+
+    <record id="biblioteca_2" model="moduloapg.biblioteca">
+        <field name="name">Biblioteca del Sur</field>
+        <field name="capacidad">3000</field>
+    </record>
+
+    <record id="biblioteca_3" model="moduloapg.biblioteca">
+        <field name="name">Biblioteca del Norte</field>
+        <field name="capacidad">4000</field>
+    </record>
+
+    <record id="biblioteca_4" model="moduloapg.biblioteca">
+        <field name="name">Biblioteca Municipal</field>
+        <field name="capacidad">2500</field>
+    </record>
+
+    <!-- Datos de Autores -->
+    <record id="autor_1" model="moduloapg.autor">
+        <field name="name">Gabriel García Márquez</field>
+        <field name="nacionalidad">Colombiana</field>
+    </record>
+
+    <record id="autor_2" model="moduloapg.autor">
+        <field name="name">Julio Cortázar</field>
+        <field name="nacionalidad">Argentina</field>
+    </record>
+
+    <record id="autor_3" model="moduloapg.autor">
+        <field name="name">Isabel Allende</field>
+        <field name="nacionalidad">Chilena</field>
+    </record>
+
+    <record id="autor_4" model="moduloapg.autor">
+        <field name="name">Mario Vargas Llosa</field>
+        <field name="nacionalidad">Peruana</field>
+    </record>
+
+    <record id="autor_5" model="moduloapg.autor">
+        <field name="name">Jorge Luis Borges</field>
+        <field name="nacionalidad">Argentina</field>
+    </record>
+
+    <record id="autor_6" model="moduloapg.autor">
+        <field name="name">Miguel de Cervantes</field>
+        <field name="nacionalidad">Española</field>
+    </record>
+
+    <record id="autor_7" model="moduloapg.autor">
+        <field name="name">Pablo Neruda</field>
+        <field name="nacionalidad">Chilena</field>
+    </record>
+
+    <record id="autor_8" model="moduloapg.autor">
+        <field name="name">Federico García Lorca</field>
+        <field name="nacionalidad">Española</field>
+    </record>
+
+    <!-- Datos de Libros -->
+    <record id="libro_1" model="moduloapg.libro">
+        <field name="name">Cien años de soledad</field>
+        <field name="publicado">1967-05-30</field>
+        <field name="precio">19.9</field>
+        <field name="genero">f</field>
+        <field name="biblioteca_id" ref="biblioteca_1"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_1')])]"/>
+    </record>
+
+    <record id="libro_2" model="moduloapg.libro">
+        <field name="name">Rayuela</field>
+        <field name="publicado">1963-06-28</field>
+        <field name="precio">15.5</field>
+        <field name="genero">n</field>
+        <field name="biblioteca_id" ref="biblioteca_2"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_2')])]"/>
+    </record>
+
+    <record id="libro_3" model="moduloapg.libro">
+        <field name="name">La casa de los espíritus</field>
+        <field name="publicado">1982-01-01</field>
+        <field name="precio">17.0</field>
+        <field name="genero">n</field>
+        <field name="biblioteca_id" ref="biblioteca_3"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_3')])]"/>
+    </record>
+
+    <record id="libro_4" model="moduloapg.libro">
+        <field name="name">La ciudad y los perros</field>
+        <field name="publicado">1962-01-01</field>
+        <field name="precio">14.0</field>
+        <field name="genero">n</field>
+        <field name="biblioteca_id" ref="biblioteca_4"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_4')])]"/>
+    </record>
+
+    <record id="libro_5" model="moduloapg.libro">
+        <field name="name">Ficciones</field>
+        <field name="publicado">1944-01-01</field>
+        <field name="precio">12.0</field>
+        <field name="genero">f</field>
+        <field name="biblioteca_id" ref="biblioteca_4"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_5')])]"/>
+    </record>
+
+    <record id="libro_6" model="moduloapg.libro">
+        <field name="name">Don Quijote de la Mancha</field>
+        <field name="publicado">1605-01-16</field>
+        <field name="precio">25.0</field>
+        <field name="genero">f</field>
+        <field name="biblioteca_id" ref="biblioteca_1"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_6')])]"/>
+    </record>
+
+    <record id="libro_7" model="moduloapg.libro">
+        <field name="name">Veinte poemas de amor y una canción desesperada</field>
+        <field name="publicado">1924-01-01</field>
+        <field name="precio">10.0</field>
+        <field name="genero">p</field>
+        <field name="biblioteca_id" ref="biblioteca_3"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_7')])]"/>
+    </record>
+
+    <record id="libro_8" model="moduloapg.libro">
+        <field name="name">Romancero Gitano</field>
+        <field name="publicado">1928-01-01</field>
+        <field name="precio">9.5</field>
+        <field name="genero">p</field>
+        <field name="biblioteca_id" ref="biblioteca_2"/>
+        <field name="autor_ids" eval="[(6, 0, [ref('autor_8')])]"/>
+    </record>
+</odoo>
